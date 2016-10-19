@@ -34,7 +34,7 @@ class Simple_Accordion_Menu_Widget extends WP_Widget {
 	}
 
 	/**
-	 * @param $name - Имя файла представления без расширения
+	 * @param string $name - Имя файла представления без расширения
 	 * @param array $instance
 	 */
 	protected function view( $name, $instance = [] ) {
@@ -42,7 +42,7 @@ class Simple_Accordion_Menu_Widget extends WP_Widget {
 		if ( $file = MENU_VIEWS_DIR . DIRECTORY_SEPARATOR . $name . '.php' and file_exists( $file ) ) {
 			$menus    = wp_get_nav_menus();
 			$instance = wp_parse_args( $instance, $this->defaults );
-			extract( compact( 'menus' ) + $instance );
+			extract( $instance );
 			include $file;
 			return;
 		}
