@@ -1,0 +1,17 @@
+ul.accordion li > ul {
+    display: none;
+}
+
+ul.accordion span.arrow {
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+}
+
+ul.accordion span.arrow.down:after {
+    content: "\2193"; /* Стрелка вниз */
+}
+
+ul.accordion span.arrow.up:after {
+    content: "\2191"; /* Стрелка вверх */
+}
